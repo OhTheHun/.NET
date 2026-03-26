@@ -1,0 +1,369 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|solutionrelative:backendservice.model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.model\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|solutionrelative:backendservice.model\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.model\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|solutionrelative:backendservice.model\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.model\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|solutionrelative:backendservice.model\\danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.data\\backendservice.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|solutionrelative:backendservice.data\\backendservice.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.data\\datacontext\\postgresdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|solutionrelative:backendservice.data\\datacontext\\postgresdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.core\\dtos\\user\\responses\\exampleresponseuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|solutionrelative:backendservice.core\\dtos\\user\\responses\\exampleresponseuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.core\\dtos\\user\\requests\\examplerequestuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|solutionrelative:backendservice.core\\dtos\\user\\requests\\examplerequestuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\fluentvalidation\\validators\\examplevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\fluentvalidation\\validators\\examplevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\data\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\data\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\controllers\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\controllers\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\backendservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\backendservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\data\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\data\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\services\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\services\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice\\mapping\\examplemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79D4FA88-671C-464A-89D0-41C6E9EC94CF}|BackendService\\BackendService.csproj|solutionrelative:backendservice\\mapping\\examplemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.model\\backendservice.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3A07AAA2-31B0-4FBA-A647-4B31CFFBAC17}|BackendService.Model\\BackendService.Model.csproj|solutionrelative:backendservice.model\\backendservice.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.core\\backendservice.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A844EFA4-39E0-414F-B9EF-B1402E0797D7}|BackendService.Core\\BackendService.Core.csproj|solutionrelative:backendservice.core\\backendservice.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|d:\\bt\\n\u0103m 3 k\u00EC 2\\c\u00F4ng ngh\u1EC7 net\\.net\\\u0111\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\backendservice\\backendservice.data\\migrations\\20260310014300_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7D5D5C-82D8-41BF-827F-06181024012F}|BackendService.Data\\BackendService.Data.csproj|solutionrelative:backendservice.data\\migrations\\20260310014300_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DanhMuc.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\DanhMuc.cs",
+              "RelativeDocumentMoniker": "BackendService.Model\\DanhMuc.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\DanhMuc.cs",
+              "RelativeToolTip": "BackendService.Model\\DanhMuc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T02:41:20.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\appsettings.json",
+              "RelativeDocumentMoniker": "BackendService\\appsettings.json",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\appsettings.json",
+              "RelativeToolTip": "BackendService\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-10T00:34:31.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BackendService.Data.csproj",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\BackendService.Data.csproj",
+              "RelativeDocumentMoniker": "BackendService.Data\\BackendService.Data.csproj",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\BackendService.Data.csproj",
+              "RelativeToolTip": "BackendService.Data\\BackendService.Data.csproj",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwBIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T00:34:31.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PostgresDbContext.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\DataContext\\PostgresDbContext.cs",
+              "RelativeDocumentMoniker": "BackendService.Data\\DataContext\\PostgresDbContext.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\DataContext\\PostgresDbContext.cs",
+              "RelativeToolTip": "BackendService.Data\\DataContext\\PostgresDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:34:31.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\User.cs",
+              "RelativeDocumentMoniker": "BackendService.Model\\User.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\User.cs",
+              "RelativeToolTip": "BackendService.Model\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:02:00.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "BackendService.Model\\Common\\BaseEntity.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "BackendService.Model\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:34:31.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Program.cs",
+              "RelativeDocumentMoniker": "BackendService\\Program.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Program.cs",
+              "RelativeToolTip": "BackendService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:34:31.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\SanPham.cs",
+              "RelativeDocumentMoniker": "BackendService.Model\\SanPham.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\SanPham.cs",
+              "RelativeToolTip": "BackendService.Model\\SanPham.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T02:43:22.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20260310014300_User.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\Migrations\\20260310014300_User.cs",
+              "RelativeDocumentMoniker": "BackendService.Data\\Migrations\\20260310014300_User.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Data\\Migrations\\20260310014300_User.cs",
+              "RelativeToolTip": "BackendService.Data\\Migrations\\20260310014300_User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:43:01.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Data\\Interface\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BackendService\\Data\\Interface\\IUserRepository.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Data\\Interface\\IUserRepository.cs",
+              "RelativeToolTip": "BackendService\\Data\\Interface\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:37:50.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ExampleRequestUserDto.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\DTOs\\User\\Requests\\ExampleRequestUserDto.cs",
+              "RelativeDocumentMoniker": "BackendService.Core\\DTOs\\User\\Requests\\ExampleRequestUserDto.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\DTOs\\User\\Requests\\ExampleRequestUserDto.cs",
+              "RelativeToolTip": "BackendService.Core\\DTOs\\User\\Requests\\ExampleRequestUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:01:24.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExampleResponseUserDto.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\DTOs\\User\\Responses\\ExampleResponseUserDto.cs",
+              "RelativeDocumentMoniker": "BackendService.Core\\DTOs\\User\\Responses\\ExampleResponseUserDto.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\DTOs\\User\\Responses\\ExampleResponseUserDto.cs",
+              "RelativeToolTip": "BackendService.Core\\DTOs\\User\\Responses\\ExampleResponseUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:15:22.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-10T01:16:15.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Controllers\\Controller.cs",
+              "RelativeDocumentMoniker": "BackendService\\Controllers\\Controller.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Controllers\\Controller.cs",
+              "RelativeToolTip": "BackendService\\Controllers\\Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:34:31.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ExampleValidation.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\FluentValidation\\Validators\\ExampleValidation.cs",
+              "RelativeDocumentMoniker": "BackendService\\FluentValidation\\Validators\\ExampleValidation.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\FluentValidation\\Validators\\ExampleValidation.cs",
+              "RelativeToolTip": "BackendService\\FluentValidation\\Validators\\ExampleValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:36:30.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BackendService.csproj",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\BackendService.csproj",
+              "RelativeDocumentMoniker": "BackendService\\BackendService.csproj",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\BackendService.csproj",
+              "RelativeToolTip": "BackendService\\BackendService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T00:54:38.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Data\\UserRepository.cs",
+              "RelativeDocumentMoniker": "BackendService\\Data\\UserRepository.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Data\\UserRepository.cs",
+              "RelativeToolTip": "BackendService\\Data\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:37:58.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BackendService\\Services\\UserService.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Services\\UserService.cs",
+              "RelativeToolTip": "BackendService\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:37:08.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Services\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "BackendService\\Services\\Interface\\IUserService.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Services\\Interface\\IUserService.cs",
+              "RelativeToolTip": "BackendService\\Services\\Interface\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:37:00.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ExampleMapping.cs",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Mapping\\ExampleMapping.cs",
+              "RelativeDocumentMoniker": "BackendService\\Mapping\\ExampleMapping.cs",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService\\Mapping\\ExampleMapping.cs",
+              "RelativeToolTip": "BackendService\\Mapping\\ExampleMapping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T00:35:17.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BackendService.Core.csproj",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\BackendService.Core.csproj",
+              "RelativeDocumentMoniker": "BackendService.Core\\BackendService.Core.csproj",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Core\\BackendService.Core.csproj",
+              "RelativeToolTip": "BackendService.Core\\BackendService.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T00:34:31.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BackendService.Model.csproj",
+              "DocumentMoniker": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\BackendService.Model.csproj",
+              "RelativeDocumentMoniker": "BackendService.Model\\BackendService.Model.csproj",
+              "ToolTip": "D:\\BT\\n\u0103m 3 k\u00EC 2\\C\u00F4ng ngh\u1EC7 NET\\.NET\\\u0110\u1ED3 \u00E1n cu\u1ED1i k\u00EC\\BackendService\\BackendService.Model\\BackendService.Model.csproj",
+              "RelativeToolTip": "BackendService.Model\\BackendService.Model.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T00:34:31.82Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
