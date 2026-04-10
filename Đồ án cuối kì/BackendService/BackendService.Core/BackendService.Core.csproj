@@ -29,4 +29,10 @@
 	</ItemGroup>
 
 
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BackendService.Model\BackendService.Model.csproj" />
+	</ItemGroup>
+
+
 </Project>
