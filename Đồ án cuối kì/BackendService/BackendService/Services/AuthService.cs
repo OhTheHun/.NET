@@ -24,7 +24,7 @@ namespace BackendService.Services
         {
             var claims = new List<Claim>
             {
-                // tạo danh sách claim dữ liệu (iat: thời điểm token tạo, thời gian hiện tạim 
+                // tạo danh sách claim dữ liệu (iat: thời điểm token tạo, Chuyển thời gian sang dạng Unix Timestamp, đảm bảo về lỗi format
                 new(JwtRegisteredClaimNames.Iat, EpochTime.GetIntDate(DateTime.UtcNow).ToString(CultureInfo.InvariantCulture), ClaimValueTypes.Integer64),
                 // tạo token riêng cho role
                 new(ClaimTypes.Role, user.Role),
