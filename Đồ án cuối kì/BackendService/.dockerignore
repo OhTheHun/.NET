@@ -1,0 +1,15 @@
+// loại bỏ file rác 
+
+**/.bin/
+**/.obj/
+**/.git/
+**/.vs/
+**/.vscode/
+**/.agent/
+**/.specify/
+node_modules/
+bin/
+obj/
+publish/
+.DS_Store
+*.user
