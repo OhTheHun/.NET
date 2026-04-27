@@ -4,27 +4,58 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: BackendService/Dockerfile
     ports:
       - "8080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
-      - ConnectionStrings__PostgresDb=Host=db;Port=5432;Database=QLBH;Username=postgres;Password=123456
+      # Kết nối tới container 'db' bên trong mạng Docker
+      - ConnectionStrings__PostgresDb=Host=db;Port=5432;Database=QLBH;Username=postgres.umvjkvwwmlwjsjqugskl;Password=lirRBGQBfBCjOV41
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    networks:
+      - backend-network
 
   db:
     image: postgres:16-alpine
+    container_name: postgres_db
     restart: always
     environment:
       - POSTGRES_DB=QLBH
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=postgres.umvjkvwwmlwjsjqugskl
+      - POSTGRES_PASSWORD=lirRBGQBfBCjOV41
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres.umvjkvwwmlwjsjqugskl -d QLBH"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
 
 volumes:
   postgres_data:

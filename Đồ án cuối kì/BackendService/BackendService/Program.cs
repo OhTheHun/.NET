@@ -5,6 +5,7 @@ using BackendService.Data.Interface;
 using BackendService.FluentValidation;
 using BackendService.Services;
 using BackendService.Services.Interface;
+using BackendService.Middleware;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -41,11 +42,20 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<PostgresDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresDb")));
 
 builder.Services.AddTransient<System.Data.IDbConnection>(sp =>
     new NpgsqlConnection(builder.Configuration.GetConnectionString("PostgresDb")));
+
+// builder.Services.AddDbContext<PostgresDbContext>(options =>
+//     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresDb"),
+//         npgsqlOptions => npgsqlOptions.EnableRetryOnFailure(
+//             maxRetryCount: 5,
+//             maxRetryDelay: TimeSpan.FromSeconds(30),
+//             errorCodesToAdd: null))
+// );
+builder.Services.AddDbContext<PostgresDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresDb")));
+
 
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -135,6 +145,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();
