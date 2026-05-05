@@ -12,20 +12,20 @@ namespace BackendService.Services
         private readonly IUserRepository _userRepository = userRepository;
         private readonly IPasswordHasherService _passwordHasherService = passwordHasherService;
 
-        public async Task<UserResponseDto[]> GetListUserAsync(string? keyword, IReadOnlyList<string>? roles, CancellationToken cancellationToken)
+        public async Task<GetUserByIdResponseDto[]> GetListUserAsync(string? keyword, IReadOnlyList<string>? roles, CancellationToken cancellationToken)
         {
             var listUser = await _userRepository.GetListUserAsync(keyword, roles, cancellationToken);
-            return listUser.Select(user => UserToUserReponseDto.Tranform(user)).ToArray();
+            return listUser.Select(user => UserToGetUserByIdResponseDto.Transform(user)).ToArray();
         }
 
-        public async Task<UserResponseDto> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task<GetUserByIdResponseDto> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
             if (user == null)
             {
                 throw new InvalidOperationException("User not found");
             }
-            var mappedUser = UserToUserReponseDto.Tranform(user);
+            var mappedUser = UserToGetUserByIdResponseDto.Transform(user);
             return mappedUser;
 
         }

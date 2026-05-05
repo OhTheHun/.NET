@@ -42,8 +42,7 @@ namespace BackendService.Controllers
             }
         }
         [HttpGet("{id:guid}")]
-        [Authorize(Roles = $"{ConstantValue.UserRole.Admin}")]
-        public async Task<ActionResult<UserResponseDto>> GetUserByIdAsync([FromRoute] Guid id, CancellationToken cancellationToken)
+        public async Task<ActionResult<GetUserByIdResponseDto>> GetUserByIdAsync([FromRoute] Guid id, CancellationToken cancellationToken)
         {
             try
             {
@@ -62,7 +61,7 @@ namespace BackendService.Controllers
         }
         [HttpGet("list")]
         [Authorize(Roles = $"{ConstantValue.UserRole.Admin}")]
-        public async Task<ActionResult<UserResponseDto[]>> GetAllUsersAsync([FromQuery] string? keyword, [FromQuery] string? roles, CancellationToken cancellationToken)
+        public async Task<ActionResult<GetUserByIdResponseDto[]>> GetAllUsersAsync([FromQuery] string? keyword, [FromQuery] string? roles, CancellationToken cancellationToken)
         {
             try
             {

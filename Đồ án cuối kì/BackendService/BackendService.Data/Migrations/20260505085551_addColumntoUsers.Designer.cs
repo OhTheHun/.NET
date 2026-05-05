@@ -3,6 +3,7 @@ using System;
 using BackendService.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackendService.Data.Migrations
 {
     [DbContext(typeof(PostgresDbContext))]
-    partial class PostgresDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260505085551_addColumntoUsers")]
+    partial class addColumntoUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -458,6 +461,7 @@ namespace BackendService.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("CreatedBy")
@@ -475,9 +479,11 @@ namespace BackendService.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("IsActive")

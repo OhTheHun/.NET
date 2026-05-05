@@ -66,6 +66,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
+
 // Validation
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
@@ -104,7 +107,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp", policy =>
     {
-        policy.WithOrigins(allowedOrigins)
+        // đổi lại allowedOrigins sau khi xong
+        policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

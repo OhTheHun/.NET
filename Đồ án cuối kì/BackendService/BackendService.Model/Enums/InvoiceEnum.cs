@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,10 @@ namespace BackendService.Model.Enums
 {
     public enum InvoiceEnum
     {
-        Pending = 0,
-        Confirmed = 1,
-        Canceled = 2,
-        Completed = 3
+        Confirmed = 0,
+        Processing = 1,
+        Delivering = 2,
+        Completed = 3,
+        Canceled = 4,
     }
 }

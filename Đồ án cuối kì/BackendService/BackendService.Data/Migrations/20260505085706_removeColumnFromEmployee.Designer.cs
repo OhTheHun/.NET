@@ -3,6 +3,7 @@ using System;
 using BackendService.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackendService.Data.Migrations
 {
     [DbContext(typeof(PostgresDbContext))]
-    partial class PostgresDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260505085706_removeColumnFromEmployee")]
+    partial class removeColumnFromEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,7 +101,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmployeeProfiles");
+                    b.ToTable("EmployeeProfiles", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.Import", b =>
@@ -458,6 +461,7 @@ namespace BackendService.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("CreatedBy")
@@ -475,9 +479,11 @@ namespace BackendService.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("IsActive")
@@ -503,7 +509,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
