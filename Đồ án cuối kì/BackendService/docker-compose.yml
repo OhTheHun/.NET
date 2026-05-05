@@ -8,10 +8,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      # Kết nối tới container 'db' bên trong mạng Docker
-      - ConnectionStrings__PostgresDb=Host=db;Port=5432;Database=QLBH;Username=postgres.umvjkvwwmlwjsjqugskl;Password=lirRBGQBfBCjOV41
+      - ConnectionStrings__PostgresDb=${DB_CONNECTION_STRING}
+      - JwtConfig__Key=${JWT_KEY}
     depends_on:
       db:
         condition: service_healthy
@@ -24,8 +24,8 @@ services:
     restart: always
     environment:
       - POSTGRES_DB=QLBH
-      - POSTGRES_USER=postgres.umvjkvwwmlwjsjqugskl
-      - POSTGRES_PASSWORD=lirRBGQBfBCjOV41
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:

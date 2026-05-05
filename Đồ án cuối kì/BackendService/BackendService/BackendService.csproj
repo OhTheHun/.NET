@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\</DockerfileContext>
+    <UserSecretsId>BackendService-Secrets-4a7f3e8b-1d2c-4b5a-9e6f-8d7c6b5a4a3b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
