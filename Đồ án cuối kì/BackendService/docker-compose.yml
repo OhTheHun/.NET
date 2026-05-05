@@ -10,8 +10,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      - ConnectionStrings__PostgresDb=${DB_CONNECTION_STRING}
-      - JwtConfig__Key=${JWT_KEY}
+      - ConnectionStrings__PostgresDb=${Host=pg-dbf00f3-postgres-toandev11.d.aivencloud.com;Port=22991;Database=QLBH;Username=avnadmin;Password=AVNS_kre-SZU7Pjv_g3uddBE;Max Auto Prepare=0;}
+      - JwtConfig__Key=${TTNl2zKjyDboZM2N0rWhgShxaek9GGDhwye1bRM2oV5}
     depends_on:
       db:
         condition: service_healthy
@@ -24,8 +24,8 @@ services:
     restart: always
     environment:
       - POSTGRES_DB=QLBH
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${avnadmin}
+      - POSTGRES_PASSWORD=${AVNS_kre-SZU7Pjv_g3uddBE}
     ports:
       - "5432:5432"
     volumes:

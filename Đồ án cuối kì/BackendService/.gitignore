@@ -26,7 +26,6 @@ project.fragment.lock.json
 artifacts/
 
 # ASP.NET Core
-BackendService/appsettings.json
 BackendService/appsettings.Development.json
 BackendService/appsettings.Production.json
 
