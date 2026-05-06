@@ -1,4 +1,5 @@
-﻿using BackendService.Core.DTOs.Product.Requests;
+﻿using BackendService.Core.DTOs.Invoice.Responses;
+using BackendService.Core.DTOs.Product.Requests;
 using BackendService.Core.DTOs.Product.Responses;
 using BackendService.Data.Interface;
 using BackendService.Mapping;
@@ -6,7 +7,7 @@ using BackendService.Services.Interface;
 
 namespace BackendService.Services
 {
-    public class ProductService(IProductRepository productRepository): IProductService
+    public class ProductService(IProductRepository productRepository) : IProductService
     {
         private readonly IProductRepository _productRepository = productRepository;
 
@@ -20,6 +21,13 @@ namespace BackendService.Services
             var product = AddProductRequestDtoToProduct.Transform(request, actor);
             await _productRepository.CreateAsync(product, cancellationToken);
             var mapped = ProductToAddProductResponseDto.Transform(product);
+            return mapped;
+        }
+
+        public async Task<GetListCategoryResponseDto[]> GetListCategoryAsync(CancellationToken cancellationToken)
+        {
+            var categoriesInDb = await _productRepository.GetListCategoryAsync(cancellationToken);
+            var mapped = categoriesInDb.Select(CategoryToGetListCategoryAsync.Transform).ToArray();
             return mapped;
         }
 
@@ -39,6 +47,12 @@ namespace BackendService.Services
                 throw new Exception("Product not found");
             }
             var mapped = ProductToGetDetailProductResponseDto.Transform(productInDb);
+            return mapped;
+        }
+        public async Task<GetListByCategoryIdResponseDto[]> GetListByCategoryIdAsync(Guid categoryId, CancellationToken cancellationToken)
+        {
+            var productsInDb = await _productRepository.GetByCategoryIdAsync(categoryId, cancellationToken);
+            var mapped = productsInDb.Select(ProductToGetListByCategoryIdResponseDto.Transform).ToArray();
             return mapped;
         }
     }

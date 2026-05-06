@@ -1,4 +1,5 @@
-﻿using BackendService.Core.DTOs.Product.Responses;
+﻿using BackendService.Core.DTOs.DonViTinh;
+using BackendService.Core.DTOs.Product.Responses;
 using BackendService.Model;
 
 namespace BackendService.Mapping
@@ -15,7 +16,11 @@ namespace BackendService.Mapping
                 Description = product.Description,
                 Cost = product.Cost,
                 Status = product.Status,
-                Image_Url = product.Image_Url
+                Image_Url = product.Image_Url,
+                DonViTinh = new BaseDonViTinhDto
+                {
+                    Ten = product.DonViTinh.TenDonViTinh
+                }
             };
         }
     }

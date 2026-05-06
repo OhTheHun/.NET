@@ -10,6 +10,9 @@
 		<Folder Include="AppSettings\" />
 		<Folder Include="Authentication\" />
 		<Folder Include="Authorization\" />
+		<Folder Include="DTOs\Category\Responses\" />
+		<Folder Include="DTOs\Category\Requests\" />
+		<Folder Include="DTOs\DonViTinh\Responses\" />
 		<Folder Include="Extensions\" />
 		<Folder Include="Constrants\" />
 	</ItemGroup>

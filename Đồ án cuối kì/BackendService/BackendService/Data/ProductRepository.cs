@@ -1,6 +1,7 @@
 ﻿using BackendService.Data.DataContext;
 using BackendService.Data.Interface;
 using BackendService.Model;
+using BackendService.Model.Common;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -18,9 +19,17 @@ namespace BackendService.Data
 
         }
 
+        public async Task<Product[]> GetByCategoryIdAsync(Guid categoryId, CancellationToken cancellationToken)
+        {
+            return await _dbContext.Products
+                .Where(p => p.CategoryId == categoryId && !p.DeleteFlag)
+                .Include(p => p.DonViTinh)
+                .ToArrayAsync(cancellationToken);
+        }
+
         public async Task<Product?> GetByIdAsync(Guid productId, CancellationToken cancellationToken)
         {
-            return await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == productId && !p.DeleteFlag, cancellationToken);
+            return await _dbContext.Products.Include(p => p.DonViTinh).FirstOrDefaultAsync(p => p.Id == productId && !p.DeleteFlag, cancellationToken);
         }
 
         public async Task<Product?> GetByNameAsync(string name, CancellationToken cancellationToken)
@@ -39,8 +48,15 @@ namespace BackendService.Data
             }
 
             query = query
-                .Where(x => !x.DeleteFlag);
+                .Where(x => !x.DeleteFlag)
+                                .Include(p => p.DonViTinh);
+
             return await query.ToArrayAsync(cancellationToken);
+        }
+
+        public async Task<Category[]> GetListCategoryAsync(CancellationToken cancellationToken)
+        {
+            return await _dbContext.Categories.AsNoTracking().ToArrayAsync(cancellationToken);
         }
 
         public Task<Product> UpdateAsync(Product product, CancellationToken cancellationToken)

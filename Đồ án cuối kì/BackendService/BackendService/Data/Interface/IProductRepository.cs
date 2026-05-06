@@ -1,4 +1,5 @@
 ﻿using BackendService.Model;
+using BackendService.Model.Common;
 
 namespace BackendService.Data.Interface
 {
@@ -9,5 +10,7 @@ namespace BackendService.Data.Interface
         Task<Product> CreateAsync(Product product, CancellationToken cancellationToken);
         Task<Product> UpdateAsync(Product product, CancellationToken cancellationToken);
         Task<Product?> GetByNameAsync (string name, CancellationToken cancellationToken);
+        Task<Category[]> GetListCategoryAsync(CancellationToken cancellationToken);
+        Task<Product[]> GetByCategoryIdAsync(Guid categoryId, CancellationToken cancellationToken);
     }
 }

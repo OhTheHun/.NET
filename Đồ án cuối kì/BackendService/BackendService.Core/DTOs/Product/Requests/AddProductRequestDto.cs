@@ -11,6 +11,7 @@ namespace BackendService.Core.DTOs.Product.Requests
     {
         public Guid CategoryId { get; set; }
         public Guid SupplierId { get; set; }
+        public Guid DonViTinhId { get; set; }
         public string? Description { get; set; }
         public decimal Cost { get; set; }
         public ProductEnum Status { get; set; }

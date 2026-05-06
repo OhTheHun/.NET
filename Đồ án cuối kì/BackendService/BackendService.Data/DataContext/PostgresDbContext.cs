@@ -23,6 +23,7 @@ namespace BackendService.Data.DataContext
         public virtual DbSet<InvoiceItem> InvoiceItems { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportDetail> ImportDetails { get; set; }
+        public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -51,6 +52,7 @@ namespace BackendService.Data.DataContext
             modelBuilder.Entity<InvoiceItem>().ToTable("InvoiceItems");
             modelBuilder.Entity<Import>().ToTable("Imports");
             modelBuilder.Entity<ImportDetail>().ToTable("ImportDetails");
+            modelBuilder.Entity<DonViTinh>().ToTable("DonViTinhs");
         }
 
     }

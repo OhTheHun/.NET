@@ -1,5 +1,6 @@
 ﻿using BackendService.Configuration;
 using BackendService.Constants;
+using BackendService.Core.DTOs.Invoice.Responses;
 using BackendService.Core.DTOs.Product.Requests;
 using BackendService.Core.DTOs.Product.Responses;
 using BackendService.Core.DTOs.User.Requests;
@@ -11,7 +12,7 @@ using Microsoft.Extensions.Options;
 
 namespace BackendService.Controllers
 {
-    [Route("api/product")]
+    [Route("api")]
     [ApiController]
     public class ProductController(IOptions<ConfigOptions> options, IProductService productService, IValidator<AddProductRequestDto> addProductRequestValidator) : BackendBaseController(options)
     {
@@ -20,7 +21,7 @@ namespace BackendService.Controllers
         private readonly IProductService _productService = productService;
         private readonly IValidator<AddProductRequestDto> _addProductRequestValidator = addProductRequestValidator;
 
-        [HttpGet("{productId:guid}")]
+        [HttpGet("product/{productId:guid}")]
         public async Task<ActionResult<GetDetailProductResponseDto>> GetProductByIdÁsync([FromRoute] Guid productId, CancellationToken cancellationToken)
         {
             try
@@ -38,7 +39,7 @@ namespace BackendService.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { error = ex.Message });
             }
         }
-        [HttpGet("list")]
+        [HttpGet("product/list")]
         public async Task<ActionResult<List<GetProductResponseDto>>> GetListProductsAsync([FromQuery] string? keyword, CancellationToken cancellationToken)
         {
             try
@@ -51,7 +52,7 @@ namespace BackendService.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { error = ex.Message });
             }
         }
-        [HttpPost("create")]
+        [HttpPost("product/create")]
         [Authorize(Roles = $"{ConstantValue.UserRole.Admin}")]
 
         public async Task<ActionResult<AddProductResponseDto>> CreateProductAsync([FromBody] AddProductRequestDto addProductRequestDto, CancellationToken cancellationToken)
@@ -66,6 +67,32 @@ namespace BackendService.Controllers
                 }
                 var createdProductId = await _productService.AddProductAsync(addProductRequestDto, actor, cancellationToken);
                 return createdProductId;
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet("Categories")]
+        public async Task<ActionResult<List<GetListCategoryResponseDto>>> GetListCategoriesAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                var categories = await _productService.GetListCategoryAsync(cancellationToken);
+                return Ok(categories);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { error = ex.Message });
+            }
+        }
+        [HttpGet("product/list/{categoryId:guid}")]
+        public async Task<ActionResult<List<GetListByCategoryIdResponseDto>>> GetListByCategoryIdAsync([FromRoute] Guid categoryId, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var products = await _productService.GetListByCategoryIdAsync(categoryId, cancellationToken);
+                return Ok(products);
             }
             catch (Exception ex)
             {

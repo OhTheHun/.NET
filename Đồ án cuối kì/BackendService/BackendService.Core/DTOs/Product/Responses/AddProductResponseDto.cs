@@ -11,6 +11,7 @@ namespace BackendService.Core.DTOs.Product.Responses
         public Guid Id { get; set; }
         public Guid CategoryId { get; set; }
         public Guid SupplierId { get; set; }
+        public Guid DonViTinhId { get; set; }
         public decimal Cost { get; set; }
 
     }
