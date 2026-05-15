@@ -8,8 +8,8 @@ namespace BackendService.Model.Enums
 {
     public enum ProductEnum
     {
-        OutOfStock = 1,
         Draft = 0,
+        OutOfStock = 1,
         Active = 2,
         Inactive = 3
     }

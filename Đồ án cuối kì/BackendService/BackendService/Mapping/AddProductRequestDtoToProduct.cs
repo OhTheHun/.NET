@@ -1,4 +1,4 @@
-﻿using BackendService.Core.DTOs.Product.Requests;
+using BackendService.Core.DTOs.Product.Requests;
 using BackendService.Model;
 using BackendService.Model.Enums;
 
@@ -13,13 +13,15 @@ namespace BackendService.Mapping
                 Id = Guid.NewGuid(),
                 CategoryId = dto.CategoryId,
                 SupplierId = dto.SupplierId,
+                DonViTinhId = dto.DonViTinhId,
                 ProductName = dto.ProductName,
                 Price = dto.Price,
-                DiscountPrice = 0,
+                DiscountPrice = dto.DiscountPrice,
                 Cost = dto.Cost,
+                SKU = dto.SKU,
                 Description = dto.Description,
                 Image_Url = dto.Image_Url,
-                Status = (int)ProductEnum.Draft,
+                Status = dto.Status,
                 CreatedBy = actor,
                 CreatedTime = DateTime.UtcNow,
                 UpdatedBy = actor,

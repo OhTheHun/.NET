@@ -1,4 +1,4 @@
-﻿using BackendService.Core.DTOs.DonViTinh;
+using BackendService.Core.DTOs.DonViTinh;
 using BackendService.Core.DTOs.Product.Responses;
 using BackendService.Model;
 
@@ -18,8 +18,8 @@ namespace BackendService.Mapping
                 CategoryId = product.CategoryId,
                 DonViTinh = new BaseDonViTinhDto
                 {
-                    Ten = product.DonViTinh.TenDonViTinh
-                }
+                    Ten = product.DonViTinh?.TenDonViTinh ?? "Không có"
+                },
             };
         }
     }

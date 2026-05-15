@@ -14,6 +14,9 @@ namespace BackendService.Mapping
                 TotalAmount = invoice.TotalAmount,
                 Status = invoice.Status.ToString(),
                 CreatedTime = invoice.CreatedTime,
+                FullName = invoice.FullName,
+                Phone = invoice.Phone,
+                Address = invoice.Address,
                 Items = invoiceItems.Select(item =>
                 {
                     var product = products.FirstOrDefault(p => p.Id == item.ProductId);

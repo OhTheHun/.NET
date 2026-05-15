@@ -1,15 +1,17 @@
-﻿using BackendService.Core.DTOs.Invoice.Responses;
+using BackendService.Core.DTOs.Invoice.Responses;
 using BackendService.Core.DTOs.Product.Requests;
 using BackendService.Core.DTOs.Product.Responses;
 using BackendService.Data.Interface;
 using BackendService.Mapping;
+using BackendService.Model;
 using BackendService.Services.Interface;
 
 namespace BackendService.Services
 {
-    public class ProductService(IProductRepository productRepository) : IProductService
+    public class ProductService(IProductRepository productRepository, IInventoryRepository inventoryRepository) : IProductService
     {
         private readonly IProductRepository _productRepository = productRepository;
+        private readonly IInventoryRepository _inventoryRepository = inventoryRepository;
 
         public async Task<AddProductResponseDto> AddProductAsync(AddProductRequestDto request, string actor, CancellationToken cancellationToken)
         {
@@ -20,6 +22,10 @@ namespace BackendService.Services
             }
             var product = AddProductRequestDtoToProduct.Transform(request, actor);
             await _productRepository.CreateAsync(product, cancellationToken);
+
+            var inventory = ProductToInventory.Transform(product, actor);
+            await _inventoryRepository.CreateAsync(inventory, cancellationToken);
+
             var mapped = ProductToAddProductResponseDto.Transform(product);
             return mapped;
         }
@@ -37,6 +43,34 @@ namespace BackendService.Services
             var mapped = productsInDb.Select(ProductToGetProductResponseDto.Transform).ToArray();
             return mapped;
 
+        }
+
+        public async Task<GetAdminProductResponseDto[]> GetAdminListProductAsync(string? keyword, Guid? categoryId, int? status, CancellationToken cancellationToken)
+        {
+            var productsInDb = await _productRepository.GetAdminListAsync(keyword, categoryId, status, cancellationToken);
+            var resultList = new List<GetAdminProductResponseDto>();
+            foreach (var product in productsInDb)
+            {
+                var inventory = await _inventoryRepository.GetByProductIdAsync(product.Id, cancellationToken);
+                resultList.Add(ProductToGetAdminProductResponseDto.Transform(product, inventory));
+            }
+            return resultList.ToArray();
+        }
+
+        public async Task UpdateProductAsync(UpdateProductRequestDto request, string actor, CancellationToken cancellationToken)
+        {
+            var productInDb = await _productRepository.GetByIdAsync(request.Id, cancellationToken);
+            if (productInDb == null)
+            {
+                throw new Exception("Product not found");
+            }
+            var product = UpdateProductRequestDtoToProduct.Transform(request, productInDb, actor);
+            await _productRepository.UpdateAsync(product, cancellationToken);
+        }
+
+        public async Task DeleteProductAsync(Guid productId, string actor, CancellationToken cancellationToken)
+        {
+            await _productRepository.SoftDeleteAsync(productId, actor, cancellationToken);
         }
 
         public async Task<GetDetailProductResponseDto> GetProductByIdAsync(Guid productId, CancellationToken cancellationToken)

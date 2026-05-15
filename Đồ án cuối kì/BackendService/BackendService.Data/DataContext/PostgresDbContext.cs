@@ -1,4 +1,4 @@
-﻿using BackendService.Model;
+using BackendService.Model;
 using BackendService.Model.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +24,7 @@ namespace BackendService.Data.DataContext
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportDetail> ImportDetails { get; set; }
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
+        public virtual DbSet<EmailHistory> EmailHistories { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -35,7 +36,7 @@ namespace BackendService.Data.DataContext
                        .AddJsonFile("appsettings.json")
                        .Build();
 
-                var connectionString = configuration.GetConnectionString("Postgres");
+                var connectionString = configuration.GetConnectionString("PostgresDb");
                 optionsBuilder.UseNpgsql(connectionString);
             }
         }
@@ -53,6 +54,9 @@ namespace BackendService.Data.DataContext
             modelBuilder.Entity<Import>().ToTable("Imports");
             modelBuilder.Entity<ImportDetail>().ToTable("ImportDetails");
             modelBuilder.Entity<DonViTinh>().ToTable("DonViTinhs");
+            modelBuilder.Entity<EmailHistory>().ToTable("EmailHistories");
+
+            modelBuilder.Seed();
         }
 
     }

@@ -19,10 +19,9 @@ public class AddProductRequestDtoValidator : AbstractValidator<AddProductRequest
             .GreaterThan(0).WithMessage("Giá bán phải lớn hơn 0");
         RuleFor(x => x.Cost)
             .GreaterThanOrEqualTo(0).WithMessage("Giá nhập không được âm");
-        RuleFor(x => x.Image_Url)
-            .NotEmpty().WithMessage("Ảnh sản phẩm không được để trống")
-            .Must(uri => Uri.IsWellFormedUriString(uri, UriKind.Absolute))
-            .WithMessage("URL ảnh không hợp lệ");
+        RuleFor(x => x.DiscountPrice)
+            .LessThan(x => x.Price)
+            .WithMessage("Giá khuyến mãi không hợp lệ");
         RuleFor(x => x.Description)
             .MaximumLength(1000).WithMessage("Mô tả tối đa 1000 ký tự");
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +12,6 @@ namespace BackendService.Core.DTOs.Product
         public decimal Price { get; set; }
         public decimal DiscountPrice { get; set; }
         public string Image_Url { get; set; } = string.Empty;
+        public string SKU { get; set; } = string.Empty;
     }
 }

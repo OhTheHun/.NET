@@ -1,7 +1,8 @@
-﻿using BackendService.Data.DataContext;
+using BackendService.Data.DataContext;
 using BackendService.Data.Interface;
 using BackendService.Model;
 using BackendService.Model.Common;
+using BackendService.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -49,19 +50,62 @@ namespace BackendService.Data
 
             query = query
                 .Where(x => !x.DeleteFlag)
+                .Where(x => x.Status == ProductEnum.Active )
                                 .Include(p => p.DonViTinh);
 
             return await query.ToArrayAsync(cancellationToken);
         }
 
-        public async Task<Category[]> GetListCategoryAsync(CancellationToken cancellationToken)
+        public async Task<Product[]> GetAdminListAsync(string? keyword, Guid? categoryId, int? status, CancellationToken cancellationToken)
         {
-            return await _dbContext.Categories.AsNoTracking().ToArrayAsync(cancellationToken);
+            IQueryable<Product> query = _dbContext.Products
+                .Include(p => p.Category)
+                .Include(p => p.DonViTinh)
+                .Include(p => p.Supplier)
+                .Where(x => !x.DeleteFlag);
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                query = query.Where(x =>
+                   x.ProductName.ToLower().Contains(keyword.ToLower()) ||
+                   x.SKU.ToLower().Contains(keyword.ToLower()));
+            }
+
+            if (categoryId.HasValue)
+            {
+                query = query.Where(x => x.CategoryId == categoryId.Value);
+            }
+
+            if (status.HasValue)
+            {
+                query = query.Where(x => (int)x.Status == status.Value);
+            }
+
+            return await query.OrderByDescending(x => x.CreatedTime).ToArrayAsync(cancellationToken);
         }
 
-        public Task<Product> UpdateAsync(Product product, CancellationToken cancellationToken)
+        public async Task<Category[]> GetListCategoryAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Categories.Where(c => !c.DeleteFlag).AsNoTracking().ToArrayAsync(cancellationToken);
+        }
+
+        public async Task<Product> UpdateAsync(Product product, CancellationToken cancellationToken)
+        {
+            _dbContext.Products.Update(product);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+            return product;
+        }
+
+        public async Task SoftDeleteAsync(Guid productId, string actor, CancellationToken cancellationToken)
+        {
+            var product = await _dbContext.Products.FindAsync(new object[] { productId }, cancellationToken);
+            if (product != null)
+            {
+                product.DeleteFlag = true;
+                product.UpdatedTime = DateTime.UtcNow;
+                product.UpdatedBy = actor;
+                await _dbContext.SaveChangesAsync(cancellationToken);
+            }
         }
     };
 }

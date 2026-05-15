@@ -62,12 +62,27 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPasswordHasherService, PasswordHasherService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAdminUserService, AdminUserService>();
+builder.Services.AddScoped<IOtherService, OtherService>();
+
+// Email Services
+builder.Services.AddScoped<IEmailService, SMTPEmailService>();
+builder.Services.AddSingleton<IEmailTemplateService, EmailTemplateService>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
+builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IDonViTinhRepository, DonViTinhRepository>();
+builder.Services.AddScoped<IDonViTinhService, DonViTinhService>();
+builder.Services.AddScoped<IImportRepository, ImportRepository>();
+builder.Services.AddScoped<IImportService, ImportService>();
 
 // Validation
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
@@ -108,7 +123,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowWebApp", policy =>
     {
         // đổi lại allowedOrigins sau khi xong
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

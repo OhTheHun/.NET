@@ -1,4 +1,4 @@
-﻿using BeeExamPro.BackendService.Model.Common;
+using BeeExamPro.BackendService.Model.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +17,8 @@ namespace BackendService.Model
         public string? Image { get; set; } 
         public string Role { get; set; } = string.Empty;
         public bool IsActive { get; set; }
+        
+        public string? ResetPasswordCode { get; set; }
+        public DateTime? ResetPasswordExpiryTime { get; set; }
     }
 }

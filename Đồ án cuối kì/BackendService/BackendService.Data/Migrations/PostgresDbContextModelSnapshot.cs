@@ -57,7 +57,59 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            TenDanhMuc = "Điện tử",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            TenDanhMuc = "Gia dụng",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            TenDanhMuc = "Thời trang",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            TenDanhMuc = "Phụ kiện",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-5555-5555-5555-555555555555"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            TenDanhMuc = "Thực phẩm",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
                 });
 
             modelBuilder.Entity("BackendService.Model.DonViTinh", b =>
@@ -93,6 +145,75 @@ namespace BackendService.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DonViTinhs", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Đơn vị tính cơ bản",
+                            TenDonViTinh = "Cái",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
+                });
+
+            modelBuilder.Entity("BackendService.Model.EmailHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Bcc")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cc")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("DeleteFlag")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("EmailStatus")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Exceptions")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Received")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Sender")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailHistories", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.EmployeeProfile", b =>
@@ -133,7 +254,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmployeeProfiles");
+                    b.ToTable("EmployeeProfiles", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.Import", b =>
@@ -174,7 +295,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Imports");
+                    b.ToTable("Imports", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.ImportDetail", b =>
@@ -217,7 +338,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ImportDetails");
+                    b.ToTable("ImportDetails", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.Inventory", b =>
@@ -251,7 +372,339 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inventories");
+                    b.ToTable("Inventories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000001"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000002"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000002"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 110
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000003"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000003"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 120
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000004"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000004"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 130
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000005"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 140
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000006"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 150
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000007"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000007"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 160
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000008"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000008"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 170
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000009"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000009"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 180
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000010"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000010"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 190
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000011"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000011"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 200
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000012"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000012"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 210
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000013"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000013"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 220
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000014"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000014"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 230
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000015"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000015"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 240
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000016"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000016"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 250
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000017"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000017"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 260
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000018"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000018"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 270
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000019"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000019"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 280
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000020"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000020"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 290
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000021"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000021"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 300
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000022"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000022"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 310
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000023"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000023"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 320
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000024"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000024"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 330
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000025"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000025"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 340
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000026"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000026"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 350
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000027"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000027"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 360
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000028"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000028"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 370
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000029"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000029"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 380
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000030"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            ProductId = new Guid("00000000-0000-0000-0000-000000000030"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            quantity = 390
+                        });
                 });
 
             modelBuilder.Entity("BackendService.Model.Invoice", b =>
@@ -259,6 +712,9 @@ namespace BackendService.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -271,14 +727,20 @@ namespace BackendService.Data.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<Guid?>("CustomerId")
                         .HasColumnType("uuid");
 
                     b.Property<bool>("DeleteFlag")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("FullName")
+                        .HasColumnType("text");
+
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
                         .HasColumnType("text");
 
                     b.Property<int>("Status")
@@ -296,7 +758,171 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Invoices");
+                    b.ToTable("Invoices", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000001"),
+                            Address = "Hà Nội",
+                            Code = "TRX-8901",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CustomerId = new Guid("cccccccc-cccc-cccc-cccc-000000000002"),
+                            DeleteFlag = false,
+                            FullName = "Nguyễn Văn Nam",
+                            PaymentMethod = "Bank Transfer",
+                            Phone = "0901234567",
+                            Status = 3,
+                            TotalAmount = 125000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000002"),
+                            Address = "Đà Nẵng",
+                            Code = "TRX-8902",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            CustomerId = new Guid("cccccccc-cccc-cccc-cccc-000000000003"),
+                            DeleteFlag = false,
+                            FullName = "Trần Văn Nam",
+                            PaymentMethod = "COD",
+                            Phone = "0912345678",
+                            Status = 1,
+                            TotalAmount = 12500000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000003"),
+                            Address = "TP.HCM",
+                            Code = "TRX-8895",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Lê Văn Minh",
+                            PaymentMethod = "Credit Card",
+                            Phone = "0987654321",
+                            Status = 3,
+                            TotalAmount = 450000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000004"),
+                            Address = "Cần Thơ",
+                            Code = "TRX-8890",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Phạm Hoàng",
+                            PaymentMethod = "Bank Transfer",
+                            Phone = "0909090909",
+                            Status = 4,
+                            TotalAmount = 34200000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 23, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000005"),
+                            Address = "Huế",
+                            Code = "TRX-8888",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 22, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Nguyễn Bích Liên",
+                            PaymentMethod = "COD",
+                            Phone = "0911223344",
+                            Status = 3,
+                            TotalAmount = 15000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 22, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000006"),
+                            Address = "Nha Trang",
+                            Code = "TRX-8887",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 22, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Trần Quốc Toản",
+                            PaymentMethod = "Bank Transfer",
+                            Phone = "0922334455",
+                            Status = 1,
+                            TotalAmount = 28000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 22, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000007"),
+                            Address = "Nam Định",
+                            Code = "TRX-8886",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 21, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Vũ Trọng Phụng",
+                            PaymentMethod = "Credit Card",
+                            Phone = "0933445566",
+                            Status = 3,
+                            TotalAmount = 12000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 21, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000008"),
+                            Address = "Nghệ An",
+                            Code = "TRX-8885",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 21, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Hồ Xuân Hương",
+                            PaymentMethod = "COD",
+                            Phone = "0944556677",
+                            Status = 4,
+                            TotalAmount = 9000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 21, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000009"),
+                            Address = "Hải Dương",
+                            Code = "TRX-8884",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 20, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Tô Hoài",
+                            PaymentMethod = "Bank Transfer",
+                            Phone = "0955667788",
+                            Status = 3,
+                            TotalAmount = 21000000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 20, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-000000000010"),
+                            Address = "Hà Nam",
+                            Code = "TRX-8883",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 20, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            FullName = "Nam Cao",
+                            PaymentMethod = "Credit Card",
+                            Phone = "0966778899",
+                            Status = 1,
+                            TotalAmount = 17500000m,
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 20, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
                 });
 
             modelBuilder.Entity("BackendService.Model.InvoiceItem", b =>
@@ -336,7 +962,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InvoiceItems");
+                    b.ToTable("InvoiceItems", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.Product", b =>
@@ -381,6 +1007,10 @@ namespace BackendService.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("SKU")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
@@ -396,7 +1026,615 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("DonViTinhId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 700000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho SmartWatch Pro X",
+                            DiscountPrice = 900000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1000000m,
+                            ProductName = "SmartWatch Pro X",
+                            SKU = "SKU-001-SM",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 800000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Tai nghe Audio Q7",
+                            DiscountPrice = 1000000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1100000m,
+                            ProductName = "Tai nghe Audio Q7",
+                            SKU = "SKU-002-TA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 900000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Bàn phím cơ MX",
+                            DiscountPrice = 1100000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1200000m,
+                            ProductName = "Bàn phím cơ MX",
+                            SKU = "SKU-003-BÀ",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000004"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 1000000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Xiaomi 14 Ultra",
+                            DiscountPrice = 1200000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1300000m,
+                            ProductName = "Xiaomi 14 Ultra",
+                            SKU = "SKU-004-XI",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000005"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 1100000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Oppo Find X7 Ultra",
+                            DiscountPrice = 1300000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1400000m,
+                            ProductName = "Oppo Find X7 Ultra",
+                            SKU = "SKU-005-OP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000006"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 1200000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho MacBook Pro M3",
+                            DiscountPrice = 1400000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1500000m,
+                            ProductName = "MacBook Pro M3",
+                            SKU = "SKU-006-MA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000007"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 1300000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Dell XPS 15",
+                            DiscountPrice = 1500000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1600000m,
+                            ProductName = "Dell XPS 15",
+                            SKU = "SKU-007-DE",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000008"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 1400000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho HP Spectre x360",
+                            DiscountPrice = 1600000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1700000m,
+                            ProductName = "HP Spectre x360",
+                            SKU = "SKU-008-HP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000009"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 1500000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Asus ROG Zephyrus G14",
+                            DiscountPrice = 1700000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1800000m,
+                            ProductName = "Asus ROG Zephyrus G14",
+                            SKU = "SKU-009-AS",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000010"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 1600000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Lenovo ThinkPad X1 Carbon",
+                            DiscountPrice = 1800000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 1900000m,
+                            ProductName = "Lenovo ThinkPad X1 Carbon",
+                            SKU = "SKU-010-LE",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000011"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 1700000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho iPad Pro M2",
+                            DiscountPrice = 1900000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2000000m,
+                            ProductName = "iPad Pro M2",
+                            SKU = "SKU-011-IP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000012"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 1800000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Samsung Galaxy Tab S9",
+                            DiscountPrice = 2000000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2100000m,
+                            ProductName = "Samsung Galaxy Tab S9",
+                            SKU = "SKU-012-SA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000013"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 1900000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Surface Pro 9",
+                            DiscountPrice = 2100000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2200000m,
+                            ProductName = "Surface Pro 9",
+                            SKU = "SKU-013-SU",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000014"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 2000000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Xiaomi Pad 6",
+                            DiscountPrice = 2200000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2300000m,
+                            ProductName = "Xiaomi Pad 6",
+                            SKU = "SKU-014-XI",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000015"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 2100000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Lenovo Tab P12",
+                            DiscountPrice = 2300000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2400000m,
+                            ProductName = "Lenovo Tab P12",
+                            SKU = "SKU-015-LE",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000016"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 2200000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho AirPods Pro 2",
+                            DiscountPrice = 2400000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2500000m,
+                            ProductName = "AirPods Pro 2",
+                            SKU = "SKU-016-AI",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000017"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 2300000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Sony WH-1000XM5",
+                            DiscountPrice = 2500000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2600000m,
+                            ProductName = "Sony WH-1000XM5",
+                            SKU = "SKU-017-SO",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000018"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 2400000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Samsung Galaxy Buds2 Pro",
+                            DiscountPrice = 2600000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2700000m,
+                            ProductName = "Samsung Galaxy Buds2 Pro",
+                            SKU = "SKU-018-SA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000019"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 2500000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Logitech MX Master 3S",
+                            DiscountPrice = 2700000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2800000m,
+                            ProductName = "Logitech MX Master 3S",
+                            SKU = "SKU-019-LO",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000020"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 2600000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Razer DeathAdder V3",
+                            DiscountPrice = 2800000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 2900000m,
+                            ProductName = "Razer DeathAdder V3",
+                            SKU = "SKU-020-RA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000021"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 2700000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Apple Watch Series 9",
+                            DiscountPrice = 2900000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3000000m,
+                            ProductName = "Apple Watch Series 9",
+                            SKU = "SKU-021-AP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000022"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 2800000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Samsung Galaxy Watch 6",
+                            DiscountPrice = 3000000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3100000m,
+                            ProductName = "Samsung Galaxy Watch 6",
+                            SKU = "SKU-022-SA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000023"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 2900000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Garmin Fenix 7",
+                            DiscountPrice = 3100000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3200000m,
+                            ProductName = "Garmin Fenix 7",
+                            SKU = "SKU-023-GA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000024"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 3000000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Huawei Watch GT 4",
+                            DiscountPrice = 3200000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3300000m,
+                            ProductName = "Huawei Watch GT 4",
+                            SKU = "SKU-024-HU",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000025"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 3100000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Amazfit GTR 4",
+                            DiscountPrice = 3300000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3400000m,
+                            ProductName = "Amazfit GTR 4",
+                            SKU = "SKU-025-AM",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000026"),
+                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Cost = 3200000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho iPhone 14",
+                            DiscountPrice = 3400000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3500000m,
+                            ProductName = "iPhone 14",
+                            SKU = "SKU-026-IP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000027"),
+                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Cost = 3300000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Samsung Galaxy A54",
+                            DiscountPrice = 3500000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3600000m,
+                            ProductName = "Samsung Galaxy A54",
+                            SKU = "SKU-027-SA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000028"),
+                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
+                            Cost = 3400000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho MacBook Air M2",
+                            DiscountPrice = 3600000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3700000m,
+                            ProductName = "MacBook Air M2",
+                            SKU = "SKU-028-MA",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000029"),
+                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
+                            Cost = 3500000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho iPad Air 5",
+                            DiscountPrice = 3700000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3800000m,
+                            ProductName = "iPad Air 5",
+                            SKU = "SKU-029-IP",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000030"),
+                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
+                            Cost = 3600000m,
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Description = "Mô tả cho Sony WF-1000XM5",
+                            DiscountPrice = 3800000m,
+                            DonViTinhId = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"),
+                            Image_Url = "https://picsum.photos/200/300",
+                            Price = 3900000m,
+                            ProductName = "Sony WF-1000XM5",
+                            SKU = "SKU-030-SO",
+                            Status = 2,
+                            SupplierId = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
                 });
 
             modelBuilder.Entity("BackendService.Model.Promotion", b =>
@@ -440,7 +1678,7 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Promotions");
+                    b.ToTable("Promotions", (string)null);
                 });
 
             modelBuilder.Entity("BackendService.Model.Supplier", b =>
@@ -450,6 +1688,10 @@ namespace BackendService.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ContactName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -467,13 +1709,22 @@ namespace BackendService.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Identify")
-                        .HasColumnType("integer");
+                    b.Property<string>("Field")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int>("PhoneNumber")
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
                         .HasColumnType("integer");
 
                     b.Property<string>("SupplierName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TaxCode")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -486,7 +1737,94 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Suppliers");
+                    b.ToTable("Suppliers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"),
+                            Address = "TP.HCM",
+                            ContactName = "Nguyễn Văn A",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "contact@vinamilk.com",
+                            Field = "Thực phẩm, Sữa",
+                            PhoneNumber = "0901234567",
+                            Status = 1,
+                            SupplierName = "Công ty CP Vinamilk",
+                            TaxCode = "0300588569",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-bbbbbbbbbbbb"),
+                            Address = "Hà Nội",
+                            ContactName = "Trần Thị B",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "contact@hoaphat.com",
+                            Field = "Thép, Công nghiệp",
+                            PhoneNumber = "0912345678",
+                            Status = 1,
+                            SupplierName = "Tập đoàn Hòa Phát",
+                            TaxCode = "0900189284",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-cccccccccccc"),
+                            Address = "Hải Phòng",
+                            ContactName = "Lê Văn C",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "contact@thanglong.com",
+                            Field = "Bao bì, In ấn",
+                            PhoneNumber = "0987654321",
+                            Status = 4,
+                            SupplierName = "Cty Bao bì Thăng Long",
+                            TaxCode = "0102345678",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-dddddddddddd"),
+                            Address = "TP.HCM",
+                            ContactName = "Phạm Hoàng D",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "contact@tgdd.vn",
+                            Field = "Bán lẻ điện tử",
+                            PhoneNumber = "18001060",
+                            Status = 1,
+                            SupplierName = "Thế Giới Di Động",
+                            TaxCode = "0303217354",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-eeeeeeeeeeee"),
+                            Address = "Hà Nội",
+                            ContactName = "Vũ Nam E",
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "contact@fpt.com.vn",
+                            Field = "Bán lẻ kỹ thuật số",
+                            PhoneNumber = "18006601",
+                            Status = 1,
+                            SupplierName = "FPT Retail",
+                            TaxCode = "0311609355",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
                 });
 
             modelBuilder.Entity("BackendService.Model.User", b =>
@@ -528,6 +1866,12 @@ namespace BackendService.Data.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
+                    b.Property<string>("ResetPasswordCode")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("ResetPasswordExpiryTime")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("text");
@@ -541,7 +1885,106 @@ namespace BackendService.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-000000000001"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "admin@test.com",
+                            FullName = "Nguyễn Văn Nam",
+                            IsActive = false,
+                            Password = "admin",
+                            Role = "Admin",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-000000000002"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "customer1@test.com",
+                            FullName = "Trần Thị Lan",
+                            IsActive = false,
+                            Password = "123",
+                            Role = "Customer",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-000000000003"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "customer2@test.com",
+                            FullName = "Lê Văn Tuấn",
+                            IsActive = false,
+                            Password = "123",
+                            Role = "Customer",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-000000000004"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "customer3@test.com",
+                            FullName = "Hoàng Thị Mai",
+                            IsActive = false,
+                            Password = "123",
+                            Role = "Customer",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-000000000005"),
+                            CreatedBy = "",
+                            CreatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc),
+                            DeleteFlag = false,
+                            Email = "customer4@test.com",
+                            FullName = "Đỗ Minh Đức",
+                            IsActive = false,
+                            Password = "123",
+                            Role = "Customer",
+                            UpdatedBy = "",
+                            UpdatedTime = new DateTime(2024, 10, 24, 10, 0, 0, 0, DateTimeKind.Utc)
+                        });
+                });
+
+            modelBuilder.Entity("BackendService.Model.Product", b =>
+                {
+                    b.HasOne("BackendService.Model.Common.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackendService.Model.DonViTinh", "DonViTinh")
+                        .WithMany()
+                        .HasForeignKey("DonViTinhId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackendService.Model.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("DonViTinh");
+
+                    b.Navigation("Supplier");
                 });
 #pragma warning restore 612, 618
         }

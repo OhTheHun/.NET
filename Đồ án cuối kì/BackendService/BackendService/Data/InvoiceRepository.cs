@@ -48,5 +48,41 @@ namespace BackendService.Data
             _context.Invoices.Update(invoice);
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task<Invoice> CreateInvoiceAsync(Invoice invoice, CancellationToken cancellationToken)
+        {
+            _context.Invoices.Add(invoice);
+            await _context.SaveChangesAsync(cancellationToken);
+            return invoice;
+        }
+
+        public async Task<InvoiceItem[]> CreateListInvoiceItemAsync(InvoiceItem[] invoiceItems, CancellationToken cancellationToken)
+        {
+            _context.InvoiceItems.AddRange(invoiceItems);
+            await _context.SaveChangesAsync(cancellationToken);
+            return invoiceItems;
+        }
+
+        public async Task<List<Invoice>> GetOrdersForApprovalAsync(CancellationToken cancellationToken)
+        {
+            return await _context.Invoices
+                .Where(i => i.DeleteFlag == false && i.Status != Model.Enums.InvoiceEnum.Canceled && i.Status != Model.Enums.InvoiceEnum.Completed)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<List<Invoice>> GetProcessedOrdersByActorAsync(string userId, CancellationToken cancellationToken)
+        {
+            return await _context.Invoices
+                .Where(i => i.DeleteFlag == false && 
+                           i.UpdatedBy == userId && 
+                           (i.Status == Model.Enums.InvoiceEnum.Completed || i.Status == Model.Enums.InvoiceEnum.Canceled))
+                .ToListAsync(cancellationToken);
+        }
+        public async Task<List<Invoice>> GetInvoicesByStatusAsync(Model.Enums.InvoiceEnum status, CancellationToken cancellationToken)
+        {
+            return await _context.Invoices
+                .Where(i => i.DeleteFlag == false && i.Status == status)
+                .ToListAsync(cancellationToken);
+        }
     }
 }
